@@ -1,0 +1,449 @@
+body {
+  font-family: 'Damion', cursive;
+  background: #fbefec;
+  background: radial-gradient(ellipse at center, #fbefec 0%, #dab4b4 100%);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.birthday {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  font-size: 10em;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  text-shadow: 0px 3px rgba(0, 0, 0, 0.1);
+}
+.birthday span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.current {
+  position: relative;
+}
+.current span:nth-child(2) {
+  -webkit-animation: hide 1s 1.5s ease forwards;
+          animation: hide 1s 1.5s ease forwards;
+}
+.current:after {
+  position: absolute;
+  left: 5px;
+  content: "Years";
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+.frontend {
+  position: relative;
+  left: 70px;
+  -webkit-animation: move 0.75s 1s ease forwards;
+          animation: move 0.75s 1s ease forwards;
+}
+.frontend:after {
+  position: absolute;
+  left: -85px;
+  content: "That's me antar";
+  font-size: 20px;
+  opacity: 0.5;
+  white-space: nowrap;
+  -webkit-animation: hide 0.5s 1s ease forwards;
+          animation: hide 0.5s 1s ease forwards;
+}
+
+.frontend-text:after {
+  content: "?";
+  position: absolute;
+  left: 100%;
+  -webkit-animation: f-right 0.75s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+          animation: f-right 0.75s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+.frontend-text:before {
+  content: "?";
+  position: absolute;
+  right: 100%;
+  -webkit-animation: f-left 0.75s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+          animation: f-left 0.75s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.current,
+.frontend,
+.plus {
+  display: inline-block;
+}
+
+.plus {
+  -webkit-animation: hide 0.3s 1s ease forwards;
+          animation: hide 0.3s 1s ease forwards;
+}
+
+@-webkit-keyframes hide {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes hide {
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes show {
+  to {
+    opacity: 1;
+    top: 40px;
+  }
+}
+@keyframes show {
+  to {
+    opacity: 1;
+    top: 40px;
+  }
+}
+@-webkit-keyframes f-left {
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 1;
+  }
+}
+@keyframes f-left {
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes f-right {
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+@keyframes f-right {
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes move {
+  to {
+    left: -250px;
+  }
+}
+@keyframes move {
+  to {
+    left: -250px;
+  }
+}
+@-webkit-keyframes cake {
+  to {
+    font-size: 28em;
+    color: rgba(255, 255, 255, 0.1);
+  }
+}
+@keyframes cake {
+  to {
+    font-size: 28em;
+    color: rgba(255, 255, 255, 0.1);
+  }
+}
+.final {
+  position: absolute;
+  font-size: 58px;
+  left: 48%;
+  top: -10px;
+  line-height: 1.3;
+  opacity: 0;
+  -webkit-animation: show 1s 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+          animation: show 1s 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+.final span {
+  display: block;
+}
+
+.fa-birthday-cake {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 5em;
+  color: rgba(255, 255, 255, 0);
+  -webkit-animation: cake 1s 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+          animation: cake 1s 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.modal_content {
+  padding: 20px;
+}
+
+.modal_content h1 {
+  margin-bottom: 30px !important;
+}
+
+#finish-modal {
+  padding: 40px 40px 40px 40px !important;
+}
+
+body .question-modal {
+  width: 500px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  transition: all .4s;
+  margin: auto;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%) scale(0);
+          transform: translateY(-50%) scale(0);
+  background: white;
+  border-radius: 20px;
+  z-index: 2;
+  padding: 40px 40px 100px 40px;
+  box-shadow: 0px 3px 10px 0px #E5B4B2;
+}
+
+body .question-modal .modal_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-60%);
+          transform: translateY(-60%);
+}
+body .question-modal .modal_image img {
+  width: 100px;
+}
+body .question-modal h1 {
+  color: #e77572;
+  margin: 0;
+}
+body .question-modal p {
+  font-family: 'georgia';
+  font-size: 15px;
+  color: #b9918e;
+}
+body .question-modal button {
+  background: #e77572;
+  color: white;
+  outline: none;
+  padding: 20px 20px 20px 20px;
+  border: none;
+  width: 50%;
+  font-size: 20px;
+  font-family: 'Damion', cursive;
+  position: absolute;
+  bottom: 0px;
+  transition: all .2s;
+  cursor: pointer;
+}
+body .question-modal button:hover {
+  background: #e3605c;
+}
+
+body .question-modal #prev,
+body .question-modal #close {
+  left: 0;
+  border-bottom-left-radius: 20px;
+}
+
+body .question-modal #next,
+body .question-modal #start {
+  right: 0;
+  border-bottom-right-radius: 20px;
+}
+
+body .question-modal input {
+  height: 45px;
+  width: 100%;
+  margin-top: 33px;
+  padding: 5px 10px;
+  background: #e7757236;
+  color: #e77572;
+  border: 2px solid #e77572;
+  font-size: 20px;
+  font-family: 'Damion', cursive;
+}
+
+.birthday {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  font-size: 10em;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  text-shadow: 0px 3px rgba(0, 0, 0, 0.1);
+}
+.birthday span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.current {
+  position: relative;
+}
+.current span:nth-child(2) {
+  -webkit-animation: hide 1s 1.5s ease forwards;
+          animation: hide 1s 1.5s ease forwards;
+}
+.current:after {
+  position: absolute;
+  left: 5px;
+  content: "Years";
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+.frontend {
+  position: relative;
+  left: 70px;
+  -webkit-animation: move 0.75s 1s ease forwards;
+          animation: move 0.75s 1s ease forwards;
+}
+.frontend:after {
+  position: absolute;
+  left: -85px;
+  content: "Lba9ara dahika";
+  font-size: 20px;
+  opacity: 0.5;
+  white-space: nowrap;
+  -webkit-animation: hide 0.5s 1s ease forwards;
+          animation: hide 0.5s 1s ease forwards;
+}
+
+.frontend-text:after {
+  content: "4";
+  position: absolute;
+  left: 100%;
+  -webkit-animation: f-right 0.75s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+          animation: f-right 0.75s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+.frontend-text:before {
+  content: "4";
+  position: absolute;
+  right: 100%;
+  -webkit-animation: f-left 0.75s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+          animation: f-left 0.75s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.current,
+.frontend,
+.plus {
+  display: inline-block;
+}
+
+.plus {
+  -webkit-animation: hide 0.3s 1s ease forwards;
+          animation: hide 0.3s 1s ease forwards;
+}
+
+@-webkit-keyframes hide {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes hide {
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes show {
+  to {
+    opacity: 1;
+    top: 40px;
+  }
+}
+@keyframes show {
+  to {
+    opacity: 1;
+    top: 40px;
+  }
+}
+@-webkit-keyframes f-left {
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 1;
+  }
+}
+@keyframes f-left {
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes f-right {
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+@keyframes f-right {
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes move {
+  to {
+    left: -250px;
+  }
+}
+@keyframes move {
+  to {
+    left: -250px;
+  }
+}
+@-webkit-keyframes cake {
+  to {
+    font-size: 28em;
+    color: rgba(255, 255, 255, 0.1);
+  }
+}
+@keyframes cake {
+  to {
+    font-size: 28em;
+    color: rgba(255, 255, 255, 0.1);
+  }
+}
+.final {
+  position: absolute;
+  font-size: 58px;
+  left: 48%;
+  top: -10px;
+  line-height: 1.3;
+  opacity: 0;
+  -webkit-animation: show 1s 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+          animation: show 1s 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+.final span {
+  display: block;
+}
+
+.fa-birthday-cake {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 5em;
+  color: rgba(255, 255, 255, 0);
+  -webkit-animation: cake 1s 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+          animation: cake 1s 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
